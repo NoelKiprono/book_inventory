@@ -1,11 +1,16 @@
-{% extends "master.html" %}
-
+{% extends "master.html" %} 
 {% block title %} Add Book {% endblock %}
-
-{% block content %}
- <div class="container">
-    
+ {% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-sm-6">
+      <form action="{% url 'add_book' %}" method="post">
+        {% csrf_token %} 
+        {{ form }}
+        <button type="submit" class="btn btn-primary">SaveBook</button>
+      </form>
+    </div>
+  </div>
 </div>
-
 
 {% endblock %}
