@@ -4,8 +4,12 @@
 
 {% block content %}
  <div class="container">
-
+    {% for book in books %}
+    <h3>{{ book.title }}</h3>
+    <p>{{ book.isbn }}</p>
+      <hr>
     
+    {% endfor %}
  </div>
 
 

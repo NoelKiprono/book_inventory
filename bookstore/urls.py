@@ -17,6 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from fusion import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    path('', views.show_books, name='show_books'),
+
+    path('create_book', views.create_book, name='add_book'),
 ]
+
