@@ -24,6 +24,12 @@ urlpatterns = [
 
     path('', views.show_books, name='show_books'),
 
-    path('create_book', views.create_book, name='add_book'),
+    path('create-book', views.create_book, name='add_book'),
+
+    path('delete-book/<int:id>', views.delete_book, name='delete_book'),
+
+    path('edit-book/<int:id>', views.edit_book, name= 'edit_book'),
+        
+
 ]
 

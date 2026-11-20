@@ -1,19 +1,69 @@
-# Python
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+*$py.class
 
-# Virtual environment
-.venv/
+# Virtual environments
 venv/
+.venv/
+env/
+ENV/
+.Python
 
-# Django
-*.log
-db.sqlite3
-media/
-
-# Environment variables
+# Environment variables & local secrets
 .env
+.env.*
+!.env.example
+local_settings.py
 
-# IDE
+# Django specific
+*.log
+*.pot
+*.pyc
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+
+# Testing & coverage
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.hypothesis/
+nosetests.xml
+coverage.xml
+*.cover
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# IDE & Editor settings
 .vscode/
 .idea/
+*.swp
+*.swo
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db

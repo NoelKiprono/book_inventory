@@ -1,16 +1,30 @@
 {% extends "master.html" %} 
-{% block title %} Add Book {% endblock %}
- {% block content %}
+{% load django_bootstrap5 %} 
+
+{% block title %} Add  Book {% endblock %} 
+
+
+{% block content %}
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-sm-6">
       <form action="{% url 'add_book' %}" method="post">
         {% csrf_token %} 
-        {{ form }}
-        <button type="submit" class="btn btn-primary">SaveBook</button>
+        
+        {% bootstrap_form form %}
+
+        <!-- {{ form }} -->
+        <button type="submit" class="btn btn-primary w-100">SaveBook</button>
       </form>
     </div>
   </div>
 </div>
 
 {% endblock %}
+
+
+
+
+
+<!-- pip freeze > requirements.txt -->
+<!-- .gitignore -->

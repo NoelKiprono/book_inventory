@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render 
 
 from fusion.my_forms import BooksForm
 
@@ -21,12 +21,29 @@ def create_book(request):
          return redirect('show_books')
     else:
       form = BooksForm()  
-    return render(request, 'add_book.html', {'form': form})    
+    return render(request, 'add_book.html', {'form': form})  
+
+         #   delete-book/34
+def delete_book(request, id):
+    book = Book.objects.get(id=id)                 # select * from books where id = 34
+    book.delete()                       # delete from books where id= 34
+    return redirect('show_books') 
+
+def edit_book(request, id):
+    book = get_object_or_404(Book, pk=id)
+    if request.method == 'POST':
+        form = BooksForm(request.POST, instance=book)
+        if form.is_valid():
+            form.save()
+            return redirect('show_books')
+    else:
+        form = BooksForm(instance=book)
+    return render(request, 'edit_book.html', {'form': form})    
 
 
 
 
-
+  
 
  #Book.objects.create(title = "The Rational Male", 
      #                   cost = 1000,
